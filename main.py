@@ -1,7 +1,17 @@
-#Here is where our A Star Implementation should live :)
-# Priority queues Open and Closed begin empty. 
+# Here is where our A Star Implementation should live :)
+input = [start,end]
+# Priority queues Open and Closed begin empty.
+open = []
+closed = []
+start = (0,0)
 # Put S into Open with priority f(s) = g(s) + h(s)
+open.append(input.pop(0))
 # Is Open empty?
+while open.length != 0:
+    for x in range(start.x - 1, start.x + 1):
+        for y in range(start.y - 1, start.y + 1):
+            open.append((x,y))
+    open.sort()
 # Yes? No solution.
 # No. Remove node with lowest f(n). Call it n.
 # If n is a goal, stop and report success (for pathfinding, return the path)
